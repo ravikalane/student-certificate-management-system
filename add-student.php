@@ -205,19 +205,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div class="row">
                             <div class="input-field col s12 m6">
-                                <input type="text" id="course" name="course">
-                                <label for="course">Course</label>
+                                <select id="course" name="course">
+                                    <option value="" disabled selected>Choose course</option>
+                                    <option value="Computer Engineering">Computer Engineering</option>
+                                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                    <option value="Electrical Engineering">Electrical Engineering</option>
+                                    <option value="Civil Engineering">Civil Engineering</option>
+                                    <option value="Electronics & Telecommunication">Electronics & Telecommunication</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Chemical Engineering">Chemical Engineering</option>
+                                    <option value="Automobile Engineering">Automobile Engineering</option>
+                                </select>
+                                <label>Course</label>
                             </div>
                             <div class="input-field col s12 m6">
-                                <input type="text" id="leaving_year" name="leaving_year">
-                                <label for="leaving_year">Leaving Year</label>
+                                <select id="leaving_year" name="leaving_year">
+                                    <option value="" disabled selected>Choose year</option>
+                                    <?php for($year = date('Y') - 10; $year <= date('Y') + 5; $year++): ?>
+                                        <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                                    <?php endfor; ?>
+                                </select>
+                                <label>Leaving Year</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12 m6">
-                                <input type="text" id="leaving_course" name="leaving_course">
-                                <label for="leaving_course">Leaving Course</label>
+                                <select id="leaving_course" name="leaving_course">
+                                    <option value="" disabled selected>Choose course</option>
+                                    <option value="Computer Engineering">Computer Engineering</option>
+                                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                    <option value="Electrical Engineering">Electrical Engineering</option>
+                                    <option value="Civil Engineering">Civil Engineering</option>
+                                    <option value="Electronics & Telecommunication">Electronics & Telecommunication</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Chemical Engineering">Chemical Engineering</option>
+                                    <option value="Automobile Engineering">Automobile Engineering</option>
+                                </select>
+                                <label>Leaving Course</label>
                             </div>
                             <div class="input-field col s12 m6">
                                 <input type="date" id="date_of_leaving" name="date_of_leaving">
@@ -225,37 +250,70 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                         </div>
 
-                        <h5 class="section-title">Performance Details</h5>
                         <div class="row">
-                            <div class="input-field col s12 m4">
+                            <div class="input-field col s12 m6">
+                                <select id="year_of_admission" name="year_of_admission">
+                                    <option value="" disabled selected>Choose year</option>
+                                    <?php for($year = date('Y') - 10; $year <= date('Y') + 5; $year++): ?>
+                                        <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                                    <?php endfor; ?>
+                                </select>
+                                <label>Year of Admission</label>
+                            </div>
+                            <div class="input-field col s12 m6">
                                 <input type="text" id="seat_no" name="seat_no">
                                 <label for="seat_no">Seat No</label>
                             </div>
+                        </div>
+
+                        <h5 class="section-title">Performance Details</h5>
+                        <div class="row">
                             <div class="input-field col s12 m4">
                                 <input type="text" id="grade" name="grade">
                                 <label for="grade">Grade</label>
                             </div>
                             <div class="input-field col s12 m4">
-                                <input type="text" id="progress" name="progress">
-                                <label for="progress">Progress</label>
+                                <select id="progress" name="progress">
+                                    <option value="" disabled selected>Choose progress</option>
+                                    <option value="Excellent">Excellent</option>
+                                    <option value="Very Good">Very Good</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Needs Improvement">Needs Improvement</option>
+                                </select>
+                                <label>Progress</label>
+                            </div>
+                            <div class="input-field col s12 m4">
+                                <select id="conduct" name="conduct">
+                                    <option value="" disabled selected>Choose conduct</option>
+                                    <option value="Excellent">Excellent</option>
+                                    <option value="Very Good">Very Good</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Satisfactory">Satisfactory</option>
+                                    <option value="Fair">Fair</option>
+                                </select>
+                                <label>Conduct</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12 m6">
-                                <input type="text" id="conduct" name="conduct">
-                                <label for="conduct">Conduct</label>
+                                <select id="reason_for_leaving" name="reason_for_leaving">
+                                    <option value="" disabled selected>Choose reason</option>
+                                    <option value="Completed Course">Completed Course</option>
+                                    <option value="Transferred to Another Institution">Transferred to Another Institution</option>
+                                    <option value="Personal Reasons">Personal Reasons</option>
+                                    <option value="Health Issues">Health Issues</option>
+                                    <option value="Financial Reasons">Financial Reasons</option>
+                                    <option value="Employment">Employment</option>
+                                    <option value="Migration">Migration</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <label>Reason for Leaving</label>
                             </div>
                             <div class="input-field col s12 m6">
                                 <input type="text" id="goi_ebc_sanction_no" name="goi_ebc_sanction_no">
                                 <label for="goi_ebc_sanction_no">GOI/EBC/Sanction No</label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="reason_for_leaving" name="reason_for_leaving" class="materialize-textarea"></textarea>
-                                <label for="reason_for_leaving">Reason for Leaving</label>
                             </div>
                         </div>
 
@@ -284,9 +342,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/date-converter.js"></script>
     <script>
         $(document).ready(function(){
             M.updateTextFields();
+            $('select').formSelect();
         });
     </script>
 </body>
