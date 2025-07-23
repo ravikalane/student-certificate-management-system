@@ -40,57 +40,66 @@ if (!$data) {
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f5f5f5;
         }
         .certificate-container {
-            max-width: 800px;
+            width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
             background: white;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
         }
         .certificate {
-            padding: 40px;
-            border: 3px solid #000;
-            margin: 20px;
+            padding: 20mm;
+            border: 2px solid #000;
             background: white;
-            min-height: 1000px;
+            min-height: 257mm;
+            box-sizing: border-box;
         }
         .header {
             text-align: center;
             border-bottom: 2px solid #000;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         .school-logo {
-            width: 80px;
-            height: 80px;
-            float: left;
-            margin-right: 20px;
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
         .school-info {
+            flex: 1;
             text-align: center;
+            padding: 0 20px;
         }
         .school-name {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #d32f2f;
             margin: 0;
             line-height: 1.2;
         }
         .school-address {
-            font-size: 12px;
+            font-size: 11px;
             margin: 5px 0;
-            line-height: 1.4;
+            line-height: 1.3;
+            white-space: pre-line;
         }
         .certificate-title {
             background: #666;
             color: white;
             text-align: center;
-            padding: 10px;
-            font-size: 18px;
+            padding: 8px;
+            font-size: 16px;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 15px 0;
             letter-spacing: 2px;
         }
         .certificate-content {
